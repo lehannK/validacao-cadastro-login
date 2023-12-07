@@ -9,18 +9,22 @@
   <body>
     <div class="container">
       <div class="card">
-        <h1>Entrar</h1>
+        <h1>Login</h1>
+
+        <div id="msg-error"></div>
+        <!-- <div id="msg-success"></div> -->
+
         <div class="label-float">
           <input type="text" id="usuario" placeholder="" required />
-          <label for="usuario">Usuário</label>
+          <label id="user-label" for="usuario">Usuário</label>
         </div>
         <div class="label-float">
           <input type="password" id="senha" placeholder="" required />
-          <label for="usuario">Senha</label>
+          <label id="senha-label" for="usuario">Senha</label>
         </div>
 
         <div class="justify-center">
-          <button>Entrar</button>
+          <button onclick="entrar()">Entrar</button>
         </div>
 
         <div class="justify-center">
@@ -33,5 +37,6 @@
         </p>
       </div>
     </div>
+    <script src="../scripts/login.js"></script>
   </body>
 </html>
