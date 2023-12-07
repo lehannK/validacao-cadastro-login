@@ -14,13 +14,34 @@ let confirmarSenha = document.querySelector("#confirmar-senha");
 let labelConfirmarSenha = document.querySelector("#label-confirmar-senha");
 let validConfirmarSenha = false;
 
+let msgError = document.querySelector("#msg-error");
+let msgSuccess = document.querySelector("#msg-success");
+
 function cadastrar() {
   if (validNome && validUsuario && validSenha && validConfirmarSenha) {
-    alert("deu bom");
-    console.log([validNome, validUsuario, validSenha, validConfirmarSenha]);
+    let userList = JSON.parse(localStorage.getItem("userList") || "[]");
+    userList.push({
+      nome: nome.value,
+      usuario: usuario.value,
+      senha: senha.value,
+    });
+
+    localStorage.setItem("userList", JSON.stringify(userList));
+
+    msgSuccess.setAttribute("style", "display: block");
+    msgSuccess.innerHTML = "<strong>Cadastrando usuário...</strong>";
+    msgError.setAttribute("style", "display: none");
+    msgError.innerHTML = "";
+
+    setTimeout(() => {
+      window.location.href = "../pages/login.html";
+    }, 3000);
   } else {
-    alert("Preencha todos os campos corretamente");
-    console.log([validNome, validUsuario, validSenha, validConfirmarSenha]);
+    msgError.setAttribute("style", "display:block");
+    msgError.innerHTML =
+      "<strong>Preencha todos os campos corretamente...</strong>";
+    msgSuccess.setAttribute("style", "display: none");
+    msgSuccess.innerHTML = "";
   }
 }
 
