@@ -17,6 +17,11 @@ let validConfirmarSenha = false;
 let msgError = document.querySelector("#msg-error");
 let msgSuccess = document.querySelector("#msg-success");
 
+function closeAlarmBtn() {
+  msgError.setAttribute("style", "display: none");
+  msgError.innerHTML = "";
+}
+
 function cadastrar() {
   if (validNome && validUsuario && validSenha && validConfirmarSenha) {
     let userList = JSON.parse(localStorage.getItem("userList") || "[]");
@@ -37,9 +42,9 @@ function cadastrar() {
       window.location.href = "../pages/login.html";
     }, 3000);
   } else {
-    msgError.setAttribute("style", "display:block");
+    msgError.setAttribute("style", "display: block");
     msgError.innerHTML =
-      "<strong>Preencha todos os campos corretamente...</strong>";
+      "Preencha os campos corretamente <button onclick='closeAlarmBtn()' id='close-alarm-btn'>x</button>";
     msgSuccess.setAttribute("style", "display: none");
     msgSuccess.innerHTML = "";
   }

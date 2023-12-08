@@ -11,7 +11,7 @@ body {
   position: relative;
   background-image: url("../assets/Ativo\ 3.png");
   background-repeat: no-repeat;
-  background-size: 80%;
+  background-size: 75%;
   background-position: center;
   height: 100vh;
   display: flex;
@@ -25,7 +25,7 @@ body::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.3);
   z-index: 0;
 }
 
@@ -37,7 +37,7 @@ body::after {
 }
 
 .card {
-  background-color: #ffffff80;
+  background-color: #f7f7f7e3;
   padding: 30px;
   border-radius: 4%;
   box-shadow: 3px 3px 1px 0px #00000060;
@@ -55,7 +55,7 @@ h1 {
   padding: 5px 5px;
   display: inline-block;
   border: 0;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
   background-color: transparent;
   outline: none;
   min-width: 180px;
@@ -122,6 +122,22 @@ button:hover {
   padding: 10px;
   border-radius: 4px;
   display: none;
+}
+
+#close-alarm-btn {
+  border: none;
+  margin: 0;
+  color: red;
+  transition: all 0.3s ease-out;
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#close-alarm-btn:hover {
+  border: 1px solid black;
+  background-color: #ff0000;
+  color: white;
 }
 
 #msg-success {

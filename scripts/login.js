@@ -1,11 +1,15 @@
+let usuario = document.querySelector("#usuario");
+let userLabel = document.querySelector("#user-label");
+let senha = document.querySelector("#senha");
+let senhaLabel = document.querySelector("#senha-label");
+let msgError = document.querySelector("#msg-error");
+
+function closeAlarmBtn() {
+  msgError.setAttribute("style", "display: none");
+  msgError.innerHTML = "";
+}
+
 function entrar() {
-  let usuario = document.querySelector("#usuario");
-  let userLabel = document.querySelector("#user-label");
-
-  let senha = document.querySelector("#senha");
-  let senhaLabel = document.querySelector("#senha-label");
-
-  let msgError = document.querySelector("#msg-error");
   let userList = [];
 
   let userValid = {
@@ -46,7 +50,8 @@ function entrar() {
     senhaLabel.setAttribute("style", "color: red");
     senha.setAttribute("style", "border-color: red");
     msgError.setAttribute("style", "display: block");
-    msgError.innerHTML = "Usuário ou senha incorretos";
+    msgError.innerHTML =
+      "Usuário e/ou senha incorretos <button onclick='closeAlarmBtn()' id='close-alarm-btn'>x</button>";
     usuario.focus();
   }
 }
